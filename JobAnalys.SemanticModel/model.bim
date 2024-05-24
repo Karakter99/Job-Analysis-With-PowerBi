@@ -1,0 +1,961 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"job_postings\",\"job_skills\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "1"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.128.952.0 (24.04)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "bcc94989-1059-48bd-bd6a-d8f3afee2ec0",
+        "fromColumn": "Job Posting Date",
+        "fromTable": "job_postings",
+        "joinOnDateBehavior": "datePartOnly",
+        "toColumn": "Date",
+        "toTable": "LocalDateTable_b7c311e4-88bb-4721-8e19-1fdd97e5a2de"
+      },
+      {
+        "name": "AutoDetected_b81e050b-69e9-49ce-85b3-15cd9094e2fa",
+        "fromColumn": "Job Posting ID",
+        "fromTable": "job_skills",
+        "toColumn": "Job Posting ID",
+        "toTable": "job_postings"
+      }
+    ],
+    "sourceQueryCulture": "tr-TR",
+    "tables": [
+      {
+        "name": "job_postings",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          },
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Job Posting ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "88b1a69b-5b05-4c5e-a098-b33b5faa514b",
+            "sourceColumn": "Job Posting ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Posting Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "72e23908-5d22-4597-ac3c-7e49a4401451",
+            "sourceColumn": "Job Posting Date",
+            "summarizeBy": "none",
+            "variations": [
+              {
+                "name": "Variation",
+                "defaultHierarchy": {
+                  "hierarchy": "Date Hierarchy",
+                  "table": "LocalDateTable_b7c311e4-88bb-4721-8e19-1fdd97e5a2de"
+                },
+                "isDefault": true,
+                "relationship": "bcc94989-1059-48bd-bd6a-d8f3afee2ec0"
+              }
+            ]
+          },
+          {
+            "name": "Job Title",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7873a5ae-489a-4821-b1be-484ef1b5fb13",
+            "sourceColumn": "Job Title",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Title Full",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "1172770a-4bd2-4e81-9303-e62a55e2eca5",
+            "sourceColumn": "Job Title Full",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Title Additional Info",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "04dab038-b6cc-4caa-8907-b4e540181ad1",
+            "sourceColumn": "Job Title Additional Info",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Position Type",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "7e4f203c-bcd3-4cc1-84d6-3e5dd43bbdd6",
+            "sourceColumn": "Job Position Type",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Position Level",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ce1001b6-d5f8-44d2-b872-34a1f9325955",
+            "sourceColumn": "Job Position Level",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Years of Experience",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "8bda6ba2-3c1c-411d-ba58-9bc6dbebd690",
+            "sourceColumn": "Years of Experience",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Job Skills",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ee4dd314-b8e8-400d-bc8c-3714d24c55fb",
+            "sourceColumn": "Job Skills",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Location",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "0fcd9f4f-3bf4-4ca9-87c0-cf073820364b",
+            "sourceColumn": "Job Location",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Minimum Pay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "c22a3854-83c4-479a-adc0-a2a29c6630d2",
+            "sourceColumn": "Minimum Pay",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Maximum Pay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "lineageTag": "7082d6ce-15d9-4708-b648-23585f95f902",
+            "sourceColumn": "Maximum Pay",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Pay Rate",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "bf5c2e25-1a4f-4a55-8451-9207a0310354",
+            "sourceColumn": "Pay Rate",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Number of Applicants",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "9818b5f5-e7c4-4072-95d3-55c7d13881df",
+            "sourceColumn": "Number of Applicants",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Company Name",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "faaab1a6-7cbe-42ca-b420-80dad5c7959f",
+            "sourceColumn": "Company Name",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Company Industry",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "23cad0ec-f58e-4c8e-a3e9-027146286530",
+            "sourceColumn": "Company Industry",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Company Size",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "ea170f0c-e300-48be-91c5-7c28f7c53a14",
+            "sourceColumn": "Company Size",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Average Pay",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "expression": "('job_postings'[Maximum Pay1] + 'job_postings'[Minimum Pay1]) / 2",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "isDataTypeInferred": true,
+            "lineageTag": "3b963aa7-b615-44e6-bcda-ef203941d5a0",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Column1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "0adee620-3b6b-4570-94fa-9ffcccdb84cf",
+            "sourceColumn": "Column1",
+            "summarizeBy": "sum"
+          },
+          {
+            "name": "Minimum Pay1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "expression": "job_postings[Minimum Pay]/10",
+            "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
+            "isDataTypeInferred": true,
+            "lineageTag": "5bde54c3-1e28-4705-8fa2-ac4aeb181a31",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          },
+          {
+            "name": "Maximum Pay1",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "double",
+            "expression": "job_postings[Maximum Pay] /10",
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "isDataTypeInferred": true,
+            "lineageTag": "5008a3da-da13-44a6-a88e-df65dd4f18e1",
+            "summarizeBy": "sum",
+            "type": "calculated"
+          }
+        ],
+        "lineageTag": "4715c39c-0bd8-43b8-bf9a-158bc0b50405",
+        "partitions": [
+          {
+            "name": "job_postings",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\yakup\\Desktop\\case_study-analyzing-job-market-data\\Datasets\\job_postings.csv\"),[Delimiter=\",\", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"\", Int64.Type}, {\"Job Posting ID\", Int64.Type}, {\"Job Posting Date\", type date}, {\"Job Title\", type text}, {\"Job Title Full\", type text}, {\"Job Title Additional Info\", type text}, {\"Job Position Type\", type text}, {\"Job Position Level\", type text}, {\"Years of Experience\", Int64.Type}, {\"Job Skills\", type text}, {\"Job Location\", type text}, {\"Minimum Pay\", Int64.Type}, {\"Maximum Pay\", Int64.Type}, {\"Pay Rate\", type text}, {\"Number of Applicants\", Int64.Type}, {\"Company Name\", type text}, {\"Company Industry\", type text}, {\"Company Size\", type text}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "DateTableTemplate_75f08e66-1a2c-48c6-9c64-0d623f2f041c",
+        "annotations": [
+          {
+            "name": "__PBI_TemplateDateTable",
+            "value": "true"
+          },
+          {
+            "name": "DefaultItem",
+            "value": "DateHierarchy"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "8427821e-eb8f-4943-88f9-4a8749108109",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "b337be22-d5da-45cf-9772-5e1ea4cbf2b0",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "7d9c1b02-2e64-48cf-b366-a78298c1e9e1",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "662066fa-aed3-4119-98f1-397164445dc9",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "a83617ef-5b61-4df5-9387-2dee2d2dd0ab",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "7f5e146a-b116-460f-84c8-18294ddd868d",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "492139bb-4d6c-4001-8f12-f495eee51e3f",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "1957f3d6-cdcd-4063-bc05-525f480e876e",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "d01fd77f-29e4-4975-8ffb-392caf925551",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "6655b075-490a-430b-9af1-907490ed06fa",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "8607c93b-c1f1-48e2-ae9c-4d1a50ba17ce",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "a9e7901d-6e36-4aab-87d7-7011030b4f30"
+          }
+        ],
+        "isHidden": true,
+        "isPrivate": true,
+        "lineageTag": "40e9f943-8d07-475a-af1b-bd1b195aa781",
+        "partitions": [
+          {
+            "name": "DateTableTemplate_75f08e66-1a2c-48c6-9c64-0d623f2f041c",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(2015,1,1), Date(2015,1,1))",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "LocalDateTable_b7c311e4-88bb-4721-8e19-1fdd97e5a2de",
+        "annotations": [
+          {
+            "name": "__PBI_LocalDateTable",
+            "value": "true"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              }
+            ],
+            "dataCategory": "PaddedDateTableDates",
+            "dataType": "dateTime",
+            "formatString": "General Date",
+            "isHidden": true,
+            "isNameInferred": true,
+            "lineageTag": "fdf8d920-dfa4-4c01-9988-72e4882bd54d",
+            "sourceColumn": "[Date]",
+            "summarizeBy": "none",
+            "type": "calculatedTableColumn"
+          },
+          {
+            "name": "Year",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Year"
+              }
+            ],
+            "dataCategory": "Years",
+            "dataType": "int64",
+            "expression": "YEAR([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "dc004fd0-9786-42dc-8d26-8371aef90a10",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "MonthNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "MonthNumber"
+              }
+            ],
+            "dataCategory": "MonthOfYear",
+            "dataType": "int64",
+            "expression": "MONTH([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "c1da1a99-5d4a-45e1-81d6-5a07ba01ffe7",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Month",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Month"
+              }
+            ],
+            "dataCategory": "Months",
+            "dataType": "string",
+            "expression": "FORMAT([Date], \"MMMM\")",
+            "isHidden": true,
+            "lineageTag": "4a7b8466-5330-449b-bc19-082f1fbd51c8",
+            "sortByColumn": "MonthNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "QuarterNo",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "QuarterNumber"
+              }
+            ],
+            "dataCategory": "QuarterOfYear",
+            "dataType": "int64",
+            "expression": "INT(([MonthNo] + 2) / 3)",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "3e0b2c6f-f6ce-425c-86ff-0efcb82a9bba",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Quarter",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Quarter"
+              }
+            ],
+            "dataCategory": "Quarters",
+            "dataType": "string",
+            "expression": "\"Qtr \" & [QuarterNo]",
+            "isHidden": true,
+            "lineageTag": "8861b248-bb0f-4e72-8c75-bf88b942f983",
+            "sortByColumn": "QuarterNo",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Day",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "User"
+              },
+              {
+                "name": "TemplateId",
+                "value": "Day"
+              }
+            ],
+            "dataCategory": "DayOfMonth",
+            "dataType": "int64",
+            "expression": "DAY([Date])",
+            "formatString": "0",
+            "isHidden": true,
+            "lineageTag": "093ed837-93eb-4f03-9c1d-836859d13cfc",
+            "summarizeBy": "none",
+            "type": "calculated"
+          }
+        ],
+        "hierarchies": [
+          {
+            "name": "Date Hierarchy",
+            "annotations": [
+              {
+                "name": "TemplateId",
+                "value": "DateHierarchy"
+              }
+            ],
+            "levels": [
+              {
+                "name": "Year",
+                "column": "Year",
+                "lineageTag": "bf7bfc72-fe79-4572-8c3e-5fe9bb6a0239",
+                "ordinal": 0
+              },
+              {
+                "name": "Quarter",
+                "column": "Quarter",
+                "lineageTag": "0e9f5d04-e736-4540-91de-aec242767aa4",
+                "ordinal": 1
+              },
+              {
+                "name": "Month",
+                "column": "Month",
+                "lineageTag": "0733c196-79cd-418e-8dea-ecf0e44d0c21",
+                "ordinal": 2
+              },
+              {
+                "name": "Day",
+                "column": "Day",
+                "lineageTag": "c793c670-2993-4f3c-b199-cad5cf252072",
+                "ordinal": 3
+              }
+            ],
+            "lineageTag": "e44387b8-92e3-491f-96ca-250ab4a725b6"
+          }
+        ],
+        "isHidden": true,
+        "lineageTag": "ff0209bf-62b4-4de8-81c1-8eb987732662",
+        "partitions": [
+          {
+            "name": "LocalDateTable_b7c311e4-88bb-4721-8e19-1fdd97e5a2de",
+            "mode": "import",
+            "source": {
+              "expression": "Calendar(Date(Year(MIN('job_postings'[Job Posting Date])), 1, 1), Date(Year(MAX('job_postings'[Job Posting Date])), 12, 31))",
+              "type": "calculated"
+            }
+          }
+        ],
+        "showAsVariationsOnly": true
+      },
+      {
+        "name": "_Measure",
+        "annotations": [
+          {
+            "name": "PBI_Id",
+            "value": "c0807fdbed2142d5918c58701af7734d"
+          },
+          {
+            "name": "436ba87b-9c83-4389-a31b-ebd06a36be98",
+            "value": "{\"Expression\":\"\"}"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Column",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "isDataTypeInferred": true,
+            "isNameInferred": true,
+            "lineageTag": "d263299a-2548-4924-8898-c321422d67e8",
+            "sourceColumn": "[Column]",
+            "summarizeBy": "sum",
+            "type": "calculatedTableColumn"
+          }
+        ],
+        "lineageTag": "1da2cb25-b194-4154-9b63-008a625b26ed",
+        "measures": [
+          {
+            "name": "Average of Averaege Pay",
+            "annotations": [
+              {
+                "name": "PBI_FormatHint",
+                "value": "{\"isGeneralNumber\":true}"
+              }
+            ],
+            "expression": "AVERAGE(job_postings[Average Pay])",
+            "lineageTag": "2caf5974-b7a3-438d-9c43-ea721ea07e27"
+          },
+          {
+            "name": "Skill Count",
+            "expression": "COUNT(job_skills[Job Skills])",
+            "formatString": "0",
+            "lineageTag": "0b4a56e9-8914-4dc1-a07c-4a03f359b3fc"
+          },
+          {
+            "name": "Posting Count",
+            "expression": "COUNT(job_postings[Job Posting ID])",
+            "formatString": "0",
+            "lineageTag": "671a364e-cd0f-4be2-b6a0-522c8a6013f5"
+          },
+          {
+            "name": "% Skill in Posting",
+            "expression": "[Skill Count] / [Posting Count]",
+            "formatString": "%0.00;-%0.00;%0.00",
+            "lineageTag": "8e6e76c5-b633-4aac-bf22-25781f062172"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "_Measure",
+            "mode": "import",
+            "source": {
+              "expression": "Row(\"Column\", BLANK())",
+              "type": "calculated"
+            }
+          }
+        ]
+      },
+      {
+        "name": "job_skills",
+        "annotations": [
+          {
+            "name": "PBI_NavigationStepName",
+            "value": "Navigation"
+          },
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Job Posting ID",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "55ed81c4-e59a-4321-9960-b0738b9ef962",
+            "sourceColumn": "Job Posting ID",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Job Skills",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "9116bfb6-8c53-4d5c-ac7b-4260b4e55164",
+            "sourceColumn": "Job Skills",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "4edb3004-48ee-45d3-b86d-d33ad69dbf76",
+        "partitions": [
+          {
+            "name": "job_skills",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(File.Contents(\"C:\\Users\\yakup\\Desktop\\case_study-analyzing-job-market-data\\Datasets\\job_postings.csv\"),[Delimiter=\",\", Columns=18, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"\", Int64.Type}, {\"Job Posting ID\", Int64.Type}, {\"Job Posting Date\", type date}, {\"Job Title\", type text}, {\"Job Title Full\", type text}, {\"Job Title Additional Info\", type text}, {\"Job Position Type\", type text}, {\"Job Position Level\", type text}, {\"Years of Experience\", Int64.Type}, {\"Job Skills\", type text}, {\"Job Location\", type text}, {\"Minimum Pay\", Int64.Type}, {\"Maximum Pay\", Int64.Type}, {\"Pay Rate\", type text}, {\"Number of Applicants\", Int64.Type}, {\"Company Name\", type text}, {\"Company Industry\", type text}, {\"Company Size\", type text}}),",
+                "    #\"Removed Other Columns\" = Table.SelectColumns(#\"Changed Type\",{\"Job Posting ID\", \"Job Skills\"}),",
+                "    #\"Replaced Value\" = Table.ReplaceValue(#\"Removed Other Columns\",\"[\",\"\",Replacer.ReplaceText,{\"Job Skills\"}),",
+                "    #\"Replaced Value1\" = Table.ReplaceValue(#\"Replaced Value\",\"]\",\"\",Replacer.ReplaceText,{\"Job Skills\"}),",
+                "    #\"Replaced Value2\" = Table.ReplaceValue(#\"Replaced Value1\",\"'\",\"\",Replacer.ReplaceText,{\"Job Skills\"}),",
+                "    #\"Split Column by Delimiter\" = Table.ExpandListColumn(Table.TransformColumns(#\"Replaced Value2\", {{\"Job Skills\", Splitter.SplitTextByDelimiter(\",\", QuoteStyle.Csv), let itemType = (type nullable text) meta [Serialized.Text = true] in type {itemType}}}), \"Job Skills\"),",
+                "    #\"Changed Type1\" = Table.TransformColumnTypes(#\"Split Column by Delimiter\",{{\"Job Skills\", type text}}),",
+                "    #\"Replaced Value3\" = Table.ReplaceValue(#\"Changed Type1\",\"powerbi\",\"power_bi\",Replacer.ReplaceText,{\"Job Skills\"}),",
+                "    #\"Filtered Rows\" = Table.SelectRows(#\"Replaced Value3\", each true),",
+                "    #\"Replaced Value4\" = Table.ReplaceValue(#\"Filtered Rows\",\"\",null,Replacer.ReplaceValue,{\"Job Skills\"}),",
+                "    #\"Filtered Rows1\" = Table.SelectRows(#\"Replaced Value4\", each true),",
+                "    #\"Replaced Value5\" = Table.ReplaceValue(#\"Filtered Rows1\",\"\",null,Replacer.ReplaceValue,{\"Job Skills\"}),",
+                "    #\"Removed Blank Rows\" = Table.SelectRows(#\"Replaced Value5\", each not List.IsEmpty(List.RemoveMatchingItems(Record.FieldValues(_), {\"\", null}))),",
+                "    #\"Filtered Rows2\" = Table.SelectRows(#\"Removed Blank Rows\", each ([Job Skills] <> null))",
+                "in",
+                "    #\"Filtered Rows2\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
